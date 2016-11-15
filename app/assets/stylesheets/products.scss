@@ -50,6 +50,20 @@ main section.categories-show {
         border-bottom-left-radius: 20px;
         font-size: 0.8em;
       }
+      aside.sold-out {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        height: 35px;
+        background-color: #f4429b;
+        border-top-left-radius: 4px;
+        border-bottom-right-radius: 20px;
+        font-size: 0.8em;
+        color: #ffffff;
+      }
+
+      //create another aside for sold out
 
       &:hover {
 
