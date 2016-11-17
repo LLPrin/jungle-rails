@@ -1,0 +1,23 @@
+
+<section class="admin-products-new">
+
+  <header class="page-header">
+    <h1>Register for an account</h1>
+  </header>
+
+
+ <div class="row">
+    <div class="col-sm-6 col-sm-offset-1">
+    <%= form_for :user, url: users_path do |form| %>
+
+      <p>First Name: <%= form.text_field :first_name %></p>
+      <p>Last Name: <%= form.text_field :last_name %></p>
+      <p>Email: <%= form.text_field :email %></p>
+      <p>Password: <%= form.password_field :password %></p>
+      <p>Password Confirmation: <%= form.password_field :password_confirmation %></p>
+      <p><%= form.submit "Submit" %></p>
+
+    <% end %>
+    </div>
+  </div>
+</section>

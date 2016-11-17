@@ -2,8 +2,11 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
 
+  match '/logout', to: 'sessions#destroy', via: 'get'
+
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
+  resources :users
 
   resource :cart, only: [:show] do
     put    :add_item
