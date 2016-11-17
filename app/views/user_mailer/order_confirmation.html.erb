@@ -1,15 +1,17 @@
-<section class="orders-show">
-
-  <header class="page-header">
-    <h1>Order #<%= @order.id %></h1>
-  </header>
-
-  <div class="order-summary jumbotron">
-    <h4>Thank you for your order! <br />
-    <%= @order.email %></h4>
-  </div>
-
-  <div class="panel panel-default items">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello,</h1>
+    <p>
+      Your order has been processed. Here are the details for order #: <%= @order.id %> <br>
+    </p>
+    <p>
+      Total: <%= @order.total %>.
+    </p>
+    <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -37,8 +39,6 @@
       </tfoot>
     </table>
   </div>
-
-
-  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-
-</section>
+    <p>Thanks for tha biz.</p>
+  </body>
+</html>
