@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   match '/logout', to: 'sessions#destroy', via: 'get'
 
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+    resources :reviews, only: [:create, :destroy]
+  end
   resources :categories, only: [:show]
   resources :users
 

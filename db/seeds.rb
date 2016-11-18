@@ -31,7 +31,7 @@ cat3 = Category.find_or_create_by! name: 'Furniture'
 
 ## PRODUCTS
 
-puts "Re-creating Products ..."
+puts "It puts the products in the table."
 
 Product.destroy_all
 
@@ -124,13 +124,28 @@ cat3.products.create!({
   price: 987.65
 })
 
-cat3.products.create!({
+reference_product = cat3.products.create!({
   name:  'Red Bookshelf',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture3.jpg'),
   quantity: 23,
   price: 2_483.75
 })
+# YOOSERS
+User.destroy_all
+puts 'It puts the user in the table.'
+
+reference_user = User.create(first_name: 'ly', last_name: 'ly', email: 'ly@ly.ca', password_digest: '$2a$08$4GNcNQUnD8kuKWQWadggJu5qx32Kuy.EMx.roULf5ApdkAWZe3vJ.')
 
 
-puts "DONE!"
+# REVOOZ
+Review.destroy_all
+puts 'It puts the reviews in the table.'
+
+Review.create(product_id: 12, user_id: 1, description: 'ew', rating: 1)
+Review.create(product_id: 11, user_id: 1, description: 'ew', rating: 4)
+Review.create(product_id: 8, user_id: 1, description: 'ew', rating: 5)
+
+Review.create(product_id: reference_product.id, user_id: reference_user.id, description: 'ew', rating: 1)
+
+puts "I iz done."

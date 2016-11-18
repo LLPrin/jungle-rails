@@ -1,0 +1,13 @@
+<%= form_for ([@product, @product.reviews.build]) do |form| %>
+        <p>
+        <%= form.label :rating %>
+        <%=  form.collection_select :rating, Review::RATINGS, :to_i, :to_i %>
+        </p>
+        <p>
+          <%= form.label :description %> <br />
+          <%= form.text_area :description %>
+        </p>
+        <p>
+          <%= form.submit %>
+        </p>
+      <% end %>
